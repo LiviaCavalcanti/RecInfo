@@ -38,7 +38,6 @@ class GazetaDoPovoSpider(scrapy.Spider):
     def news_parse(self, response):
 
         dic = {}
-        pdb.set_trace()
         title = response.css('h1.col-8.c-left.c-title::text').get()
         if not title:
             title = response.css('h1.c-titulo::text').get()
