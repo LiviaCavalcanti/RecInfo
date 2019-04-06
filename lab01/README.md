@@ -2,7 +2,7 @@
 ## Laboratório 01: Crawlers
 
 ### Descrição
-
+Código original: https://github.com/tiago-clementino/ri_lab_01
 Neste laboratório exploraremos o conceito de *Focused Crawler*. Como forma de exercício, buscaremos conteúdo de forma automatizada em portais de notícias. Para tanto, será preciso reconhecer o conteúdo útil em cada página acessada. Com este objetivo, utilizares um estratégia simples baseada no próprio layout HTML do site alvo. Felizmente as páginas HTML publicadas em portais deste tipo seguem um layout HTML recorrente, o qual pode ser reconhecido de forma automática facilmente. Este será o objetivo deste laboratório.
 
 Com o intuito de evitar prejuízos quanto à disponibilidade de acesso do site alvo, elencamos seis domínios diferentes para serem distribuídos entre os alunos. Cada domínio será explorado por doze alunos diferentes de forma independente (sem formação de grupos). Seguem os domínios possíveis abaixo;
