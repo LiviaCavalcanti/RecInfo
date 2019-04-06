@@ -39,6 +39,7 @@ class GazetaDoPovoSpider(scrapy.Spider):
 
         dic = {}
         title = response.css('h1.col-8.c-left.c-title::text').get()
+        hour = ''
         if not title:
             title = response.css('h1.c-titulo::text').get()
             date = response.css('div.c-creditos time::text').getall()
@@ -52,6 +53,7 @@ class GazetaDoPovoSpider(scrapy.Spider):
         
         if(isinstance(date, list)):
             if len(date)>1:
+                hour = date[-1].replace('[','').replace(']','')
                 date = date[0].replace('[','').replace(']','')
             if len(date) == 1:
                 date = date[0]
@@ -59,6 +61,6 @@ class GazetaDoPovoSpider(scrapy.Spider):
         text = ' '.join(response.css('div.gp-coluna.col-6.texto-materia.paywall-google p::text').getall())
 
         subtitle = response.css('h2.c-sumario::text').get()
-        dictionnaire = {'title': title, 'subtitle': subtitle, 'author': author, 'date': date, 'session': session, 'text': text, 'url': response.url}
+        dictionnaire = {'title': title, 'subtitle': subtitle, 'author': author, 'date': date, 'hour': hour, 'session': session, 'text': text, 'url': response.url}
 
         yield dictionnaire
